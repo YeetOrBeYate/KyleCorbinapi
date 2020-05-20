@@ -13,6 +13,7 @@ router.get('/',(req,res)=>{
     })
 })
 
+//This endpoint was mainly used for testing. I dont think I'll really need it so I'll keep it until I'm finnished
 router.get('/:id', (req,res)=>{
     let id = req.params.id
     qs.getTags(id)

@@ -13,4 +13,17 @@ router.get('/', (req,res)=>{
     })
 })
 
+router.get('/:id', (req,res)=>{
+    let id = req.params.id
+    qs.filterbyTag(id)
+
+    .then(projects=>{
+        res.status(200).json({projects})
+    })
+
+    .catch(err=>{
+        res.status(500).json(err)
+    })
+})
+
 module.exports = router
