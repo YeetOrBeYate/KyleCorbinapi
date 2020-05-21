@@ -23,10 +23,6 @@ exports.up = function(knex) {
         .notNullable()
         .unique();
 
-        tbl.string('github')
-        .notNullable();
-
-
     })
   
 };

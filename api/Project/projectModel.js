@@ -9,6 +9,14 @@ const getTags = (Pid)=>{
     .where('project.id',Pid )
 }
 
+const getRepos = (Pid) =>{
+    return db('portfolio')
+    .select('repo.id', 'repo.name', 'repo.url')
+    .from('repo')
+    .join('project', 'repo.project_id', '=', 'project.id')
+    .where('project.id' , Pid)
+}
+
 const getAll = ()=>{
     return db("portfolio")
     .select('*')
@@ -17,7 +25,8 @@ const getAll = ()=>{
     .then(async(list)=>{
         return Promise.all(list.map(async(proj)=>{
             const tags = await getTags(proj.id)
-            return {...proj, tags}
+            const repos = await getRepos(proj.id)
+            return {...proj, tags, repos}
         }))
     })
 }
@@ -30,7 +39,8 @@ const getbyid = (Pid)=>{
     .first()
     .then(async(proj)=>{
         const tags = await getTags(proj.id)
-        return {...proj, tags}
+        const repos = await getRepos(proj.id)
+        return {...proj, tags, repos}
     })
 }
 
