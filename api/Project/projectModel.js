@@ -28,6 +28,10 @@ const getbyid = (Pid)=>{
     .from('project')
     .where('id', Pid)
     .first()
+    .then(async(proj)=>{
+        const tags = await getTags(proj.id)
+        return {...proj, tags}
+    })
 }
 
 module.exports = {
