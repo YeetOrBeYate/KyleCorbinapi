@@ -14,9 +14,11 @@ router.get('/',(req,res)=>{
 })
 
 //This endpoint was mainly used for testing. I dont think I'll really need it so I'll keep it until I'm finnished
+
+//ignore above comment, I'm now using it for getting one project fro the database
 router.get('/:id', (req,res)=>{
     let id = req.params.id
-    qs.getTags(id)
+    qs.getbyid(id)
 
     .then(tags=>{
         res.status(201).json({tags})

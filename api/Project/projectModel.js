@@ -22,7 +22,16 @@ const getAll = ()=>{
     })
 }
 
+const getbyid = (Pid)=>{
+    return db('portfolio')
+    .select('*')
+    .from('project')
+    .where('id', Pid)
+    .first()
+}
+
 module.exports = {
     getAll,
-    getTags
+    getTags,
+    getbyid
 }
