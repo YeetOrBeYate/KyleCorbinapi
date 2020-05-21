@@ -20,8 +20,8 @@ router.get('/:id', (req,res)=>{
     let id = req.params.id
     qs.getbyid(id)
 
-    .then(tags=>{
-        res.status(201).json({tags})
+    .then(project=>{
+        res.status(201).json(project)
     })
 
     .catch(err=>{
