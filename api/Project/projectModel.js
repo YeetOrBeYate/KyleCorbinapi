@@ -25,8 +25,8 @@ const getAll = ()=>{
     .then(async(list)=>{
         return Promise.all(list.map(async(proj)=>{
             const tags = await getTags(proj.id)
-            const repos = await getRepos(proj.id)
-            return {...proj, tags, repos}
+            // const repos = await getRepos(proj.id)
+            return {...proj, tags}
         }))
     })
 }
@@ -47,5 +47,6 @@ const getbyid = (Pid)=>{
 module.exports = {
     getAll,
     getTags,
-    getbyid
+    getbyid,
+    getRepos
 }
