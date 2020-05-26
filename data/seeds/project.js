@@ -15,6 +15,13 @@ exports.seed = function(knex) {
       description:'React-Redux front-end with vanilla css, and Node-Express backend powered by a Postgresql database',
       about:'originally I only built the backend for a Lambda labs project, but decided to build out a model driven front end',
       url:'https://kyle-corbin-africa-market.netlify.app'
+    },
+    {
+      name:'Portfolio',
+      picture:'https://i.imgur.com/5feLXTS.png',
+      description:'React-Redux front end using the Reactstrap CSS framework, and Node-Express backend and Postgresql database',
+      about:"The goal was to make a simple showcase of what I've learned from Lambda School.",
+      url: 'not hosted yet'
     }
   ]);
 };
