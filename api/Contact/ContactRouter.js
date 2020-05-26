@@ -3,6 +3,8 @@ require('dotenv').config()
 const nodemailer = require('nodemailer')
 const router = express.Router()
 
+const middleware = require('./middlware.js')
+
 const qs = require('./ContactModel.js')
 
 const transporter = nodemailer.createTransport({
@@ -31,15 +33,10 @@ let userOptions = {
 }
 
 
-//I'll need middleware to make sure each req has a name, email, and phone
-router.post('/', (req,res)=>{
 
-    // if(body.name ==="fail"){
-    //     res.status(401).json(body)
-    // }
+router.post('/', middleware.Checkbody, (req,res)=>{
 
-    // res.status(200).json(body)
-
+    
     // variables needed for processing this request
     let body= req.body
     body.date = new Date().toString()
@@ -53,38 +50,41 @@ router.post('/', (req,res)=>{
     <p>Message: ${body.message}</p>
     <p>date: ${body.date}</p>
     `
-    //meat of the endpoint
-    // qs.insertEmail(body)
+    // meat of the endpoint
+    qs.insertEmail(body)
 
-    // .then((email)=>{
-    //     let id = email[0]
+    .then((email)=>{
+        let id = email[0]
 
-    //     transporter.sendMail(mailOptions,(err,data)=>{
-    //         if(err){
-    //             qs.errorEmail(id)
-    //             .then(email=>{
-    //                 res.status(401).json(email)
-    //             })
-    //             .catch(err=>{
-    //                 res.status(401).json(err)
-    //             })
-    //         }else{
-    //             transporter.sendMail(userOptions,(err,data)=>{
-    //                 if(err){
-    //                     qs.errorEmail(id)
-    //                     .then(email=>{
-    //                         res.status(401).json(email)
-    //                     })
-    //                     .catch(err=>{
-    //                         res.status(401).json(err)
-    //                     })
-    //                 }else{
-    //                     res.status(200).json(body)
-    //                 }
-    //             })
-    //         }
-    //     })
-    // })
+        //sending the confirmation to client
+        transporter.sendMail(mailOptions,(err,data)=>{
+            if(err){
+                qs.errorEmail(id)
+                .then(email=>{
+                    res.status(401).json(email)
+                })
+                .catch(err=>{
+                    res.status(401).json(err)
+                })
+            }else{
+                //sending the email to my professional email so I can respond to them
+                transporter.sendMail(userOptions,(err,data)=>{
+                    if(err){
+                        qs.errorEmail(id)
+                        .then(email=>{
+                            res.status(401).json(email)
+                        })
+                        .catch(err=>{
+                            res.status(401).json(err)
+                        })
+                    }else{
+                        //only when both emails are sent, will the client get confirmation from the portfolio site
+                        res.status(200).json(body)
+                    }
+                })
+            }
+        })
+    })
     .catch(err=>{
         console.log(err)
         res.status(401).json(err)
