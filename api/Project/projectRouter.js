@@ -13,7 +13,6 @@ router.get('/',(req,res)=>{
     })
 })
 
-//This endpoint was mainly used for testing. I dont think I'll really need it so I'll keep it until I'm finnished
 
 //ignore above comment, I'm now using it for getting one project fro the database
 router.get('/:id', (req,res)=>{
