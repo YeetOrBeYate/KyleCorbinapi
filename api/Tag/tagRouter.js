@@ -10,6 +10,7 @@ router.get('/', (req,res)=>{
     })
     .catch(err=>{
         res.status(500).json({err})
+        console.log(err)
     })
 })
 
@@ -23,6 +24,8 @@ router.get('/:id', (req,res)=>{
 
     .catch(err=>{
         res.status(500).json(err)
+        console.log(err)
+
     })
 })
 
