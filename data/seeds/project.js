@@ -4,7 +4,7 @@ exports.seed = function(knex) {
   return knex('project').insert([
     { 
       name: 'Country Directory',
-      picture:'https://i.imgur.com/RkxEhK6.png',
+      picture:'https://i.imgur.com/surfHQp.png',
       description:'Ant-design layout driven by a React-Redux front end',
       about:'This project took about 2 weeks to finnish start to finnish. I was able to learn the Country api quickly, as well as Ant-designs api as well.',
       url:'https://kyle-corbin-country-directory.netlify.app'
