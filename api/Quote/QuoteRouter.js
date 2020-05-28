@@ -11,11 +11,11 @@ router.get('/',(req,res)=>{
     if(id ===0){
         id = 21
     }
-    
+
     qs.getbyId(id)
 
     .then(obj=>{
-        res.status(200).json({obj})
+        res.status(200).json(obj)
     })
 
     .catch(err=>{
