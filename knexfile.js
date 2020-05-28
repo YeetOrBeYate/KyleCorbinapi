@@ -20,6 +20,7 @@ module.exports = {
 
   },
 
+  
   production: {
     client: "pg",
     connection: process.env.DATABASE_URL,
@@ -31,3 +32,5 @@ module.exports = {
     }
   }
 };
+
+console.log(`database url: ${process.env.DATABASE_URL}`)
