@@ -33,10 +33,12 @@ let userOptions = {
 }
 
 
-
+//406->Something wrong with data format
+//409->Contact wasnt saved
+//401->Contact saved but email service is down
 router.post('/', middleware.Checkbody, (req,res)=>{
 
-    
+    // res.status(401).json(body)
     // variables needed for processing this request
     let body= req.body
     body.date = new Date().toString()
@@ -87,7 +89,7 @@ router.post('/', middleware.Checkbody, (req,res)=>{
     })
     .catch(err=>{
         console.log(err)
-        res.status(401).json(err)
+        res.status(409).json(err)
     })
 
 })
