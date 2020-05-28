@@ -4,6 +4,7 @@ const qs = require('./tagModel.js')
 const router = express.Router()
 
 router.get('/', (req,res)=>{
+    console.log('i am hitting the endpoint')
     qs.getAllTags()
     .then(tags=>{
         res.status(200).json({tags})
