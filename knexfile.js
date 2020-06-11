@@ -33,4 +33,3 @@ module.exports = {
   }
 };
 
-console.log(`database url: ${process.env.DATABASE_URL}`)

@@ -14,5 +14,7 @@ exports.seed = function(knex) {
       {name:"Ant-Design"},
       {name:"Reactstrap"},
       {name:"CSS"},
+      {name:"JWT"},
+      {name:'Bcrypt'}
     ]);
 };
