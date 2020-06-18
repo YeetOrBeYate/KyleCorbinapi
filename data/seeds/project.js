@@ -20,8 +20,8 @@ exports.seed = function(knex) {
       name:'Portfolio',
       picture:'https://i.imgur.com/5feLXTS.png',
       description:'React-Redux front end using the Reactstrap CSS framework, and Node-Express backend and Postgresql database',
-      about:"The goal was to make a simple showcase of what I've learned from Lambda School.",
-      url: 'not hosted yet'
+      about:"The goal was to see how many features I could pick up and implement relevantly quickly. One of my favorite add-ons is interactive imaging called CSS-Doodles to render the triangles wrapped around each page(click them and see what happens).The contact page is using the Nodemailer package to send confirmation to you and myself that your message has been received.The UI effects on the Portfolio filter tags were tough to wrap my head around, but bringing the idea to life helped me understand css selectors better.And lastly, the motivational quote at the bottom is randomly generated from the Nodehjs backend upon refresh. Overall, this project was a blast to make while still leaving room for improvments.",
+      url: 'https://dazzling-engelbart-e26037.netlify.app/'
     }
   ]);
 };
