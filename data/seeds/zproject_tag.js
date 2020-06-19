@@ -17,6 +17,7 @@ exports.seed = function(knex) {
   // {name:"JWT"},-13
   // {name:'Bcrypt'},-14
   // {name:'Material-UI'}-15
+  // {'mongoDB'} -16
 
     return knex('project_tag').insert([
       {project_id: 1, tag_id:2},
@@ -50,6 +51,7 @@ exports.seed = function(knex) {
       {project_id:4, tag_id:8},
       {project_id:4, tag_id:13},
       {project_id:4, tag_id:14},
-      {project_id:4, tag_id:15}
+      {project_id:4, tag_id:15},
+      {project_id:4, tag_id:16}
     ]);
 };

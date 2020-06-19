@@ -16,6 +16,7 @@ exports.seed = function(knex) {
       {name:"CSS"},
       {name:"JWT"},
       {name:'Bcrypt'},
-      {name:'Material-UI'}
+      {name:'Material-UI'},
+      {name:'MongoDB'}
     ]);
 };
