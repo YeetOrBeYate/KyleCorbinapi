@@ -15,6 +15,7 @@ exports.seed = function(knex) {
       {name:"Reactstrap"},
       {name:"CSS"},
       {name:"JWT"},
-      {name:'Bcrypt'}
+      {name:'Bcrypt'},
+      {name:'Material-UI'}
     ]);
 };

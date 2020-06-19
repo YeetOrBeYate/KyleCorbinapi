@@ -1,6 +1,7 @@
 
 exports.seed = function(knex) {
   // Inserts seed entries
+  // kyle-portfolio-be
   return knex('project').insert([
     { 
       name: 'Country Directory',
@@ -22,6 +23,13 @@ exports.seed = function(knex) {
       description:'React-Redux front end using the Reactstrap CSS framework, and Node-Express backend and Postgresql database',
       about:"The goal was to see how many features I could pick up and implement relevantly quickly. One of my favorite add-ons is interactive imaging called CSS-Doodles to render the triangles wrapped around each page(click them and see what happens).The contact page is using the Nodemailer package to send confirmation to you and myself that your message has been received.The UI effects on the Portfolio filter tags were tough to wrap my head around, but bringing the idea to life helped me understand css selectors better.And lastly, the motivational quote at the bottom is randomly generated from the Nodehjs backend upon refresh. Overall, this project was a blast to make while still leaving room for improvments.",
       url: 'https://dazzling-engelbart-e26037.netlify.app/'
+    },
+    {
+      name:'Contact Keeper',
+      picture:'https://i.imgur.com/tTgWM1Y.png',
+      description:'React-Redux application to keep track of contact information',
+      about:"This is my first backend built with a noSQL database. I chose MongoDB to try out the popular MERN stack and I am please with the result. A user can create, edit and delete contact cards in their personal or professional life. Part of me liked how 'unstructured' a document database is relative to postgresql but still felt taken back at the data not being in 3nf. I could see myself using both for structured and unstructed data on a more complicated application. For this application I used JWT tokens for authentication and verification on all required endpoints, and sessionStorage to hold important parts of state and the token.",
+      url:'https://epic-spence-29184e.netlify.app/'
     }
   ]);
 };
