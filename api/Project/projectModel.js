@@ -35,7 +35,7 @@ const getPicturesbyid = (Pid)=>{
     return db('portfolio')
     .select('picture')
     .from('project_pics')
-    .where('id', Pid)
+    .where('project_id', Pid)
 }
 
 const getbyid = (Pid)=>{
