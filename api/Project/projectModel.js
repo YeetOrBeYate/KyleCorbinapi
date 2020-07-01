@@ -31,6 +31,13 @@ const getAll = ()=>{
     })
 }
 
+const getPicturesbyid = ()=>{
+    return db('portfolio')
+    .select('picture')
+    .from('project_pics')
+    .where('id', id)
+}
+
 const getbyid = (Pid)=>{
     return db('portfolio')
     .select('*')
@@ -40,6 +47,7 @@ const getbyid = (Pid)=>{
     .then(async(proj)=>{
         const tags = await getTags(proj.id)
         const repos = await getRepos(proj.id)
+        const pictures = await getPicturesbyid(proj.id)
         return {...proj, tags, repos}
     })
 }

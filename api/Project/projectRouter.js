@@ -14,7 +14,7 @@ router.get('/',(req,res)=>{
 })
 
 
-//ignore above comment, I'm now using it for getting one project fro the database
+//ignore above comment, I'm now using it for getting one project from the database
 router.get('/:id', (req,res)=>{
     let id = req.params.id
     qs.getbyid(id)
