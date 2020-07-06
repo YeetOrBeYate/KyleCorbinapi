@@ -29,7 +29,7 @@ exports.seed = function(knex) {
       picture:'https://i.imgur.com/tTgWM1Y.png',
       description:'React-Redux application to keep track of contact information',
       about:"This is my first backend built with a noSQL database. I chose MongoDB to try out the popular MERN stack and I am happy with the result. A user can create, edit and delete contact cards in their personal or professional life. Part of me liked how 'unstructured' a document database is relative to PostgreSQL but still felt taken back at the data not being in 3nf. I could see myself using both for structured and unstructed data on a more complicated application. For this application I used JWT tokens for authentication and verification on all required endpoints, and sessionStorage to hold important parts of state and the token.",
-      url:'https://epic-spence-29184e.netlify.app/'
+      url:'https://kyle-contact-keeper.netlify.app/'
     }
   ]);
 };
